@@ -105,6 +105,7 @@ export default function Template(props) {
     sidebarContents,
     githubUrl,
     spectrumUrl,
+    slackUrl,
     typescriptApiBox,
     baseUrl
   } = props.pageContext;
@@ -134,6 +135,7 @@ export default function Template(props) {
           headings={headings}
           hash={hash}
           githubUrl={githubUrl}
+          slackUrl={slackUrl}
           spectrumUrl={spectrumUrl}
         >
           <CustomLinkContext.Provider

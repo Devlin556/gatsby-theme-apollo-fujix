@@ -8,6 +8,7 @@ import {IconGithub} from '@apollo/space-kit/icons/IconGithub';
 import {IconSchema} from '@apollo/space-kit/icons/IconSchema';
 import {PageNav, breakpoints, colors} from 'gatsby-theme-apollo-core';
 import {ReactComponent as SpectrumLogo} from '../assets/spectrum.svg';
+import {ReactComponent as SlackLogo} from '../assets/spectrum.svg';
 import {withPrefix} from 'gatsby';
 
 const Wrapper = styled.div({
@@ -197,7 +198,7 @@ export default function PageContent(props) {
         <BodyContent ref={contentRef} className="content-wrapper">
           {props.children}
         </BodyContent>
-        <EditLink>{editLink}</EditLink>
+        {props.githubUrl && <EditLink>{editLink}</EditLink>}
         <PageNav
           prevPage={props.pages[pageIndex - 1]}
           nextPage={props.pages[pageIndex + 1]}
@@ -213,6 +214,11 @@ export default function PageContent(props) {
           />
         )}
         {editLink}
+        {props.slackUrl && (
+          <AsideLink href={props.spectrumUrl}>
+            <SlackLogo /> Discuss on Slack
+          </AsideLink>
+        )}
         {props.spectrumUrl && (
           <AsideLink href={props.spectrumUrl}>
             <SpectrumLogo /> Discuss on Spectrum

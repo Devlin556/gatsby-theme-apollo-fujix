@@ -181,6 +181,7 @@ exports.createPages = async (
     sidebarCategories,
     spectrumHandle,
     spectrumPath,
+    slackUrl,
     typescriptApiBox,
     versions = {},
     defaultVersion,
@@ -294,6 +295,7 @@ exports.createPages = async (
         spectrumUrl:
           spectrumHandle &&
           getSpectrumUrl(spectrumHandle) + (spectrumPath || `/${repo}`),
+        slackUrl,
         typescriptApiBox,
         versions: versionKeys, // only need to send version labels to client
         defaultVersion,

@@ -37,11 +37,11 @@ export default function HeaderButton() {
   return (
     <Container>
       <StyledLink
-        href="https://engine.apollographql.com?utm_source=docs-button"
+        href="https://app.fujix.io"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Launch Graph Manager
+        Open Fuji X
         <StyledIcon weight="thin" />
       </StyledLink>
     </Container>

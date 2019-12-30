@@ -8,7 +8,7 @@ import {IconGithub} from '@apollo/space-kit/icons/IconGithub';
 import {IconSchema} from '@apollo/space-kit/icons/IconSchema';
 import {PageNav, breakpoints, colors} from 'gatsby-theme-apollo-core';
 import {ReactComponent as SpectrumLogo} from '../assets/spectrum.svg';
-import {ReactComponent as SlackLogo} from '../assets/spectrum.svg';
+import {ReactComponent as SlackLogo} from '../assets/slack.svg';
 import {withPrefix} from 'gatsby';
 
 const Wrapper = styled.div({

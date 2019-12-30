@@ -256,11 +256,11 @@ export default function PageLayout(props) {
               <MenuButton onClick={openSidebar} />
               <Logo width={32} fill="currentColor" />
             </MobileNav>
-            <Search
+            {algoliaApiKey ? <Search
               siteName={siteName}
               apiKey={algoliaApiKey}
               indexName={algoliaIndexName}
-            />
+            /> : <div style={{  width: '100%' }} /> }
             <HeaderButton />
           </Header>
           <SelectedLanguageContext.Provider value={selectedLanguageState}>

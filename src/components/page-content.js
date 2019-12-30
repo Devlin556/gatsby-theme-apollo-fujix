@@ -186,11 +186,11 @@ export default function PageContent(props) {
     );
   });
 
-  const editLink = (
+  const editLink = props.githubUrl ? (
     <AsideLink href={props.githubUrl}>
       <IconGithub /> Edit on GitHub
     </AsideLink>
-  );
+  ) : null
 
   return (
     <Wrapper>
@@ -198,7 +198,7 @@ export default function PageContent(props) {
         <BodyContent ref={contentRef} className="content-wrapper">
           {props.children}
         </BodyContent>
-        {props.githubUrl && <EditLink>{editLink}</EditLink>}
+        <EditLink>{editLink}</EditLink>
         <PageNav
           prevPage={props.pages[pageIndex - 1]}
           nextPage={props.pages[pageIndex + 1]}
@@ -237,7 +237,7 @@ export default function PageContent(props) {
 PageContent.propTypes = {
   children: PropTypes.node.isRequired,
   pathname: PropTypes.string.isRequired,
-  githubUrl: PropTypes.string.isRequired,
+  githubUrl: PropTypes.string,
   pages: PropTypes.array.isRequired,
   hash: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

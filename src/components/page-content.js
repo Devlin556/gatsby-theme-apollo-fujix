@@ -215,7 +215,7 @@ export default function PageContent(props) {
         )}
         {editLink}
         {props.slackUrl && (
-          <AsideLink href={props.spectrumUrl}>
+          <AsideLink href={props.slackUrl}>
             <SlackLogo /> Discuss on Slack
           </AsideLink>
         )}

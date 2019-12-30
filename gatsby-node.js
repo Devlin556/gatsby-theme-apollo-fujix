@@ -257,7 +257,7 @@ exports.createPages = async (
     // let it slide
   }
 
-  const [owner, repo] = githubRepo.split('/');
+  const [owner, repo] = (githubRepo || '/').split('/');
   const template = require.resolve('./src/components/template');
   edges.forEach(edge => {
     const {id, relativePath} = edge.node;
@@ -281,7 +281,7 @@ exports.createPages = async (
         versionDifference,
         versionBasePath: getVersionBasePath(fields.version),
         sidebarContents: sidebarContents[fields.version],
-        githubUrl:
+        githubUrl: githubRepo && 
           'https://' +
           path.join(
             'github.com',
@@ -293,7 +293,7 @@ exports.createPages = async (
             relativePath
           ),
         spectrumUrl:
-          spectrumHandle &&
+        spectrumPath && spectrumHandle &&
           getSpectrumUrl(spectrumHandle) + (spectrumPath || `/${repo}`),
         slackUrl,
         typescriptApiBox,
